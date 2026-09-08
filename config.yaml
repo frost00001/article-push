@@ -1,0 +1,55 @@
+# ===== 文献订阅配置 =====
+
+# 邮件接收地址（发给谁）
+email_to: "m18192201767@163.com"
+email_from: "m18192201767@163.com"
+
+# 回溯天数（每天跑一次，抓最近 N 天的论文；放宽到 7 天 + seen.json 去重，避免漏抓/重复发）
+lookback_days: 7
+
+# 每日最多入选论文数（发邮件上限）
+max_papers: 3
+
+# 邮件附件 PDF 总大小上限（MB）。Outlook 单封约 25MB，附件超过就只发链接
+max_attach_mb: 15
+
+# 是否试运行：true = 只打印+下载PDF，不发邮件；false = 真正发邮件
+dry_run: false
+
+# 关键词粗筛（标题/摘要小写匹配，命中任意一个即保留）
+keywords:
+  - brain
+  - neuro
+  - neural
+  - optical imaging
+  - wave optics
+  - optics
+  - fNIRS
+  - two-photon
+  - optical coherence tomography
+  - oct
+  - microscopy
+  - light sheet
+  - diffuse optical
+  - electromagnetic
+  - neuroimaging
+  - biophotonics
+  - biophysics
+  - biomedical
+  - biophysical
+
+# arXiv 分类（每天各抓最新 N 篇）
+arxiv_categories:
+  - physics.optics
+  - physics.bio-ph
+  - physics.med-ph
+  - q-bio.NC
+  - q-bio.BM
+arxiv_max_per_cat: 40
+
+# PubMed 检索式（NCBI E-utilities 语法）
+pubmed_query: '(brain[Title/Abstract] OR neural[Title/Abstract] OR neuro[Title/Abstract]) AND (optical[Title/Abstract] OR optics[Title/Abstract] OR imaging[Title/Abstract] OR fNIRS[Title/Abstract] OR "two-photon"[Title/Abstract] OR microscopy[Title/Abstract])'
+pubmed_max: 40
+
+# DeepSeek 模型
+llm_model: deepseek-chat
